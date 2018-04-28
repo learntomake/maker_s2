@@ -20,37 +20,31 @@ function R(value) {analogWrite(led1, value);}
 function Y(value) {analogWrite(led2, value);}
 function G(value) {analogWrite(led3, value);}
 
-function changeLight() {
-    state++;
-    if (state==5) {
-        state=0;
-    }
-}
 
 function sleep(delay) {
     var start = new Date().getTime();
     while (new Date().getTime() < start + delay);
 }
 
-state = 0;
+var state = 0;
 while (true) {
     if (state===0) {
         R(valueR); Y(off); G(off);
     }
-    if (state==1) {
+    if (state===1) {
         R(valueR); Y(valueY); G(off);
     }
-    if (state==2) {
+    if (state===2) {
         R(off); Y(off); G(valueG);
     }
-    if (state==3) {
+    if (state===3) {
         R(off); Y(valueY); G(off);
     }
-    if (state==4) {
+    if (state===4) {
         R(valueR); Y(off); G(off);
     }
     state++;
-    if (state==5) {
+    if (state===5) {
         state = 0;
     }
     sleep(2000);
