@@ -21,19 +21,12 @@ function Y(value) {digitalWrite(led2, value);}
 function G(value) {digitalWrite(led3, value);}
 
 
-function changeLight() {
-    state++;
-    if (state==5) {
-        state=0;
-    }
-}
-
 function sleep(delay) {
     var start = new Date().getTime();
     while (new Date().getTime() < start + delay);
 }
 
-state = 0;
+var state = 0;
 while (true) {
     if (state===0) {
         R(on); Y(off); G(off);
