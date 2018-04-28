@@ -47,5 +47,5 @@ while (true) {
     if (state===5) {
         state = 0;
     }
-    sleep(2000);
+    sleep(1000);
 }
